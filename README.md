@@ -6,6 +6,10 @@
 별도의 설치 없이 간단한 함수 호출로 사용할 수 있으며, 웹 접근성 기준을 충족하도록 설계되었습니다.
 어떤 화면에서든 가볍게 사용할 수 있는 모듈을 목표로 합니다.
 
+## 개발 상태
+이 프로젝트는 현재 **개발 중**이며 **베타 버전**입니다. 일부 기능이 완전하지 않을 수 있으며, 버그가 있을 수 있습니다. 사용자 여러분의 피드백과 버그 보고를 환영합니다!
+사용 중 발견한 버그나 개선 제안은 [이슈](https://github.com/사용자명/프로젝트명/issues)를 통해 알려주세요. 여러분의 의견이 큰 도움이 됩니다!
+
 ## 설치법 - Installation
 
 ### 필요사항-Requirements
@@ -51,6 +55,9 @@
 <button onclick="toggleKeyboard(this,'DEFAULT');">Keyboard(Default)</button>
 <button onclick="toggleKeyboard(this,'SMALL');">Keyboard(small)</button>
 ```
+
+### 개발 중인 기능
+- 컬러 theme지원
 
 ## Contributing
 새로운 기능을 제안하거나 버그를 보고하려면 이슈를 열어주세요. 풀 리퀘스트를 제출하기 전에 코딩 스타일을 확인하세요. 기여를 환영합니다!
