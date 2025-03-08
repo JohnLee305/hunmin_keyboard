@@ -38,6 +38,14 @@
 ```html
 <script src="./[프로젝트 경로]/hunmin-keyboard.js" type="text/javascript"></script>
 ```
+#### hunmin-keyboard.css
+- 프로젝트 파일을 다운로드하여 경로에 추가하세요.
+```html
+<link rel="stylesheet" href="./[프로젝트 경로]/hunmin-keyboard.css">
+```
+
+
+
 
 #### 전체 설치 예시
 ```html
@@ -46,6 +54,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="./path/to/hangul.js"></script>
   <script src="./path/to/hunmin-keyboard.js"></script>
+  <link rel="stylesheet" href="./path/to/hunmin-keyboard.css">
 </head>
 ```
 
