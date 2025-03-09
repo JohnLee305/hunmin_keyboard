@@ -69,6 +69,8 @@ https://johnlee305.github.io/keyboard_demo.html <br>
 
 ### 개발 중인 기능
 - 컬러 theme지원
+- javascript 바닐라만으로 동작하는 버젼 제공
+- 상태바
 
 ## Contributing
 새로운 기능을 제안하거나 버그를 보고하려면 이슈를 열어주세요.<br>
