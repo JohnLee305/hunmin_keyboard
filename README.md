@@ -2,14 +2,15 @@
 공공기관을 포함한 모두가 쓸 수 있는 한글 가상 웹키보드 
 
 ## 설명
-이 프로젝트는 웹 페이지에서 한글 및 영문 입력을 지원하는 가벼운 가상 키보드를 제공합니다. 
-별도의 설치 없이 간단한 함수 호출로 사용할 수 있으며, 웹 접근성 기준을 충족하도록 설계되었습니다.
-어떤 화면에서든 가볍게 사용할 수 있는 모듈을 목표로 합니다.
-[여기](https://johnlee305.github.io/keyboard_demo.html)를 클릭하시면 DEMO를 확인할 수 있습니다.
-
+이 프로젝트는 웹 페이지에서 한글 및 영문 입력을 지원하는 가벼운 가상 키보드를 제공합니다. <br>
+별도의 설치 없이 간단한 함수 호출로 사용할 수 있으며, 웹 접근성 기준을 충족하도록 설계되었습니다.<br>
+어떤 화면에서든 가볍게 사용할 수 있는 모듈을 목표로 합니다.<br>
+[데모페이지](https://johnlee305.github.io/keyboard_demo.html)를 클릭하시면 DEMO를 확인할 수 있습니다.<br>
+https://johnlee305.github.io/keyboard_demo.html <br>
 ## 개발 상태
-이 프로젝트는 현재 **개발 중**이며 **베타 버전**입니다. 일부 기능이 완전하지 않을 수 있으며, 버그가 있을 수 있습니다. 사용자 여러분의 피드백과 버그 보고를 환영합니다!
-사용 중 발견한 버그나 개선 제안은 [이슈](https://github.com/사용자명/프로젝트명/issues)를 통해 알려주세요. 여러분의 의견이 큰 도움이 됩니다!
+이 프로젝트는 현재 **개발 중**이며 **베타 버전**입니다. 일부 기능이 완전하지 않을 수 있으며, 버그가 있을 수 있습니다. <br>
+사용자 여러분의 피드백과 버그 보고를 환영합니다! <br>
+사용 중 발견한 버그나 개선 제안은 [이슈](https://github.com/JohnLee305/hunmin_keyboard/issues)를 통해 알려주세요. 여러분의 의견이 큰 도움이 됩니다!
 
 ## 설치법 - Installation
 
@@ -70,10 +71,12 @@
 - 컬러 theme지원
 
 ## Contributing
-새로운 기능을 제안하거나 버그를 보고하려면 이슈를 열어주세요. 풀 리퀘스트를 제출하기 전에 코딩 스타일을 확인하세요. 기여를 환영합니다!
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-Please make sure to update tests as appropriate.
+새로운 기능을 제안하거나 버그를 보고하려면 이슈를 열어주세요.<br>
+풀 리퀘스트를 제출하기 전에 코딩 스타일을 확인하세요. 기여를 환영합니다! <br>
+<br>
+Pull requests are welcome. For major changes, please open an issue first <br>
+to discuss what you would like to change. <br>
+Please make sure to update tests as appropriate. <br>
 johnathanl305@gmail.com
 ## License
 
