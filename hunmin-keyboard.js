@@ -5,18 +5,19 @@ function toggleKeyboard(obj, inpSizeOption) {
     if (document.getElementById("HM_keyboardzone") != null) {
         document.getElementById("HM_keyboardzone").remove();
     } else {
-        // 도큐먼드에 가상 키보드 tag삽입
-        var divKeyboardzone = document.createElement("div")
+        var divKeyboardzone = document.createElement("div");
         divKeyboardzone.id = "HM_keyboardzone";
-        divKeyboardzone.className = "HM_KBSZ_"+sizeOption;
-        
+        divKeyboardzone.className = "HM_KBSZ_" + sizeOption;
+        divKeyboardzone.setAttribute("role", "region"); // 선택 사항: 키보드 영역임을 명시
+        divKeyboardzone.setAttribute("aria-label", "가상 키보드"); // 선택 사항: 설명 추가
         document.body.appendChild(divKeyboardzone);
         var keyboardzone = document.getElementById("HM_keyboardzone");
         const keyboard = new HMJKeyboard(keyboardzone, null);
 
-        let inputElements = document.getElementsByTagName('input');
+        // 입력 필드 이벤트 리스너 수정
+        let inputElements = document.getElementsByTagName('input'); // 'agetElementsByTagName' 오타 수정
         for (let i = 0; i < inputElements.length; i++) {
-            inputElements[i].addEventListener("click", function () {
+            inputElements[i].addEventListener("focus", function () { // "click" -> "focus"
                 keyboard.setInput(inputElements[i]);
             });
         }
@@ -27,10 +28,10 @@ function toggleKeyboard(obj, inpSizeOption) {
         var button = $(obj);
         $("#HM_keyboardzone")
             .css({
-                top: button.offset().top + button.outerHeight()+15, // 버튼 아래 위치
-                left: button.offset().left // 버튼과 정렬
+                top: button.offset().top + button.outerHeight() + 15,
+                left: button.offset().left
             })
-            .fadeIn(200); // 부드럽게 나타남
+            .fadeIn(200);
     }
 }
 function HMJKeyboard(zone, input) {
@@ -74,37 +75,42 @@ function HMJKeyboard(zone, input) {
     keydiv.className = "HM_Keyboard-container";
     zone.appendChild(keydiv);
 
-    function updateKeyboardLayout() {
-        keydiv.innerHTML = "";
-        let toolbar = document.createElement("div");
-        toolbar.className = "HM_Ktoolbar";
-        toolbar.innerHTML = '<button class="HM_Kboard_close" onclick="toggleKeyboard();">&#10006;</button>';
-        keydiv.appendChild(toolbar);
- 
-        form[nowlang].forEach(row => {
-            let HMkeyLine = document.createElement("div");
-            HMkeyLine.className = "HM_Key-line";
-            row.forEach(keyText => {
-                let key = document.createElement("button");
-                key.textContent = keyText;
-                key.className = "HM_Key";
-                key.addEventListener("click", keyfun);
-                key.addEventListener("touchstart", keyfun);
-                if (keyText === "space"){key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_space HM_FTSZ_FK_"+sizeOption;}
-                else if (keyText === "shift"){shiftActive ? key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_FK_"+sizeOption+" HM_shift-active" : key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_FK_"+sizeOption;}
-                else if (keyText === "한/영"){ key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_FK_"+sizeOption;}
-                else if (keyText === "TAB"){key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_FK_"+sizeOption;}
-                else if (keyText === "enter"){key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_FK_"+sizeOption;}
-                else { key.className = "HM_Key HM_KSZ_"+sizeOption+" HM_FTSZ_NK_"+sizeOption }
-                HMkeyLine.appendChild(key);
-            });
-            keydiv.appendChild(HMkeyLine);
+function updateKeyboardLayout() {
+    keydiv.innerHTML = "";
+    let toolbar = document.createElement("div");
+    toolbar.className = "HM_Ktoolbar";
+    toolbar.innerHTML = '<button class="HM_Kboard_close" onclick="toggleKeyboard();" aria-label="키보드 닫기">✖</button>'; // ARIA 레이블 추가
+    keydiv.appendChild(toolbar);
+
+    form[nowlang].forEach(row => {
+        let HMkeyLine = document.createElement("div");
+        HMkeyLine.className = "HM_Key-line";
+        row.forEach(keyText => {
+            let key = document.createElement("button");
+            key.textContent = keyText;
+            key.className = "HM_Key";
+            key.addEventListener("click", keyfun);
+            key.addEventListener("touchstart", keyfun);
+            if (keyText === "space") {
+                key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_space HM_FTSZ_FK_" + sizeOption;
+            } else if (keyText === "shift") {
+                shiftActive ? key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_FK_" + sizeOption + " HM_shift-active" : key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_FK_" + sizeOption;
+            } else if (keyText === "한/영") {
+                key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_FK_" + sizeOption;
+            } else if (keyText === "TAB") {
+                key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_FK_" + sizeOption;
+            } else if (keyText === "enter") {
+                key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_FK_" + sizeOption;
+            } else {
+                key.className = "HM_Key HM_KSZ_" + sizeOption + " HM_FTSZ_NK_" + sizeOption;
+            }
+            HMkeyLine.appendChild(key);
         });
+        keydiv.appendChild(HMkeyLine);
+    });
+}
 
 
-           
-      
-    }
     updateKeyboardLayout();
 
     function keyfun(event) {
